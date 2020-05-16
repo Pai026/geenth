@@ -64,11 +64,12 @@
 			{
 				echo "<span class='noResult'>No FavouritesFound Found</span>";
 			}
-			else
+		else{
+			while($row=mysqli_fetch_array($playlistQuery))
 			{
-				$row=mysqli_fetch_array($playlistQuery)
+				
 				$favourite=new Favourite($conn,$row['userId']);
-
+			}
 
 				echo "<div class='gridViewItem' role='link' tabindex='0' onclick='openPage(\"favourites.php\")'>
 					<div class='playlistImage'>
@@ -81,7 +82,7 @@
 	 						Favourite Songs
 	 				</div>
 				</div>";
-			}
+		}
 	?>
 
 
