@@ -64,12 +64,13 @@
 			{
 				echo "<span class='noResult'>No FavouritesFound Found</span>";
 			}
-			while($row=mysqli_fetch_array($playlistQuery))
+			else
 			{
+				$row=mysqli_fetch_array($playlistQuery)
 				$favourite=new Favourite($conn,$row['userId']);
 
 
-				echo "<div class='gridViewItem' role='link' tabindex='0' onclick='openPage(\"Favourites.php\")'>
+				echo "<div class='gridViewItem' role='link' tabindex='0' onclick='openPage(\"favourites.php\")'>
 					<div class='playlistImage'>
 					<img src='assets/images/icons/playlist.png'>
 					</div>
