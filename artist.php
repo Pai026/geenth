@@ -37,7 +37,7 @@ $artist=new Artist($conn,$artistId);
 	<h2>Songs</h2>
 	<ul class="tracklist">
 		<?php 
-			$songIdArray=$artist->getSongId($artist->getName());
+			$songIdArray=$artist->getSongId();
 			$i=1;
 			foreach($songIdArray as $songId)
 			{
