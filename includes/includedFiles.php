@@ -7,6 +7,7 @@
 		include("includes/classes/Album.php");
 		include("includes/classes/Song.php");
 		include("includes/classes/Playlist.php");
+		include("includes/classes/Favourite.php");
 		if(isset($_GET['userLoggedIn']))
 		{
 			$userLoggedIn = new User($conn,$_GET['userLoggedIn']);

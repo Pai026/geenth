@@ -15,7 +15,14 @@ $artist= $album->getArtist();
 
 
 ?>
+<script>
+	
 
+
+
+
+
+</script>
 <div class="entityInfo">
 	<div class="left">
 		<img src="<?php
@@ -40,6 +47,7 @@ $artist= $album->getArtist();
 
 				$albumSong=new Song($conn,$songId);
 				$albumArtist=$albumSong->getArtist();
+				$fav=new Favourite($conn,$songId);
 				echo "<li class='tracklistRow'>
 						<div class='trackCount'> 
 						<img class='play' src='assets/images/icons/play_white.png' onclick='setTrack(\"" . $albumSong->getId(). "\",tempPlaylist,true)'> 
@@ -51,6 +59,10 @@ $artist= $album->getArtist();
 						<span class='trackName'>".$albumSong->getTitle()."</span>
 						<span class='artistName'>".$albumArtist->getName()."</span>
 
+						</div>
+						<div class='trackOptions'>
+						<input type='hidden' class='songId' value='".$albumSong->getId()."'>
+						<img class='optionsButton star' src='assets/images/icons/".$fav->getStar()."' onclick='setFavourite(this,".$albumId.")'>
 						</div>
 						<div class='trackOptions'>
 						<input type='hidden' class='songId' value='".$albumSong->getId()."'>
@@ -79,7 +91,8 @@ $artist= $album->getArtist();
 <nav class="optionsMenu">
 	<input type="hidden" class="songId">
 	<?php echo Playlist::getPlaylistDropdown($conn,$userLoggedIn->getUser()); ?>
-		<div class="item">
+	<script>var artistId='<?php echo $albumArtist->getID();?>';</script>
+		<div class="item" onclick="gotoArtist(artistId)">
 			Goto Artist
 		</div>
 		<div class="item">

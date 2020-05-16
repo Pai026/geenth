@@ -3,6 +3,12 @@
  ?>
  <div class="entityInfo">
  	<div class="centerSection">
+ 		<div class="profilePic">
+ 		<img src="<?php
+ 				echo $userLoggedIn->getProfilePic();
+
+ 			?>">	
+ 		</div>
  		<div class="userInfo">
  			<h1>
  					<?php 
