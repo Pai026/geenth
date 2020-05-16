@@ -1,7 +1,9 @@
 <?php 	
 	include("includes/includedFiles.php");
  ?>
-
+<head><link rel="icon" 
+      type="image/png" 
+	    src="../assets/images/geenth.png"></head>
 <h1 class="pageHeadingBig">You Might Also Like</h1>
 <div class="gridViewContainer">
 
