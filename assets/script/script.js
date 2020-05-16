@@ -39,6 +39,12 @@ $(document).on("change","select.playlist",function(){
 
 });
 
+function gotoArtist(artistId)
+{
+	openPage("artist.php?id="+artistId);
+
+
+}
 function openPage(url)
 {	if(timer!=null)
 	{
@@ -177,6 +183,22 @@ function showOptionsMenu(button)
 
 }
 
+function setFavourite(button,albumId)
+{
+	var songId=$(button).prevAll(".songId").val();
+	$.post("includes/handlers/ajax/addFavourites.php", {songId:songId,userId:userLoggedIn})
+				.done(function(error){
+				if(error!="")
+				{
+					alert(error);
+					return;
+				}
+
+
+				openPage("album.php?id="+albumId);
+			});
+
+}
 function formatTime(seconds)
 {
 	var time=Math.round(seconds);

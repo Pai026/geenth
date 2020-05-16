@@ -362,7 +362,7 @@ body
 }
 .tracklistRow .trackDuration
 {
-	width:12%;
+	width:6%;
 	float:left;
 	text-align:right;
 }
@@ -526,4 +526,8 @@ body
 {
 	color:blue;
 	font-weight:300;
+}
+.profilePic
+{
+	text-align: center;
 }
