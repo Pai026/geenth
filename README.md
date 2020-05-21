@@ -1,4 +1,7 @@
 # geenth
+
+[![Heroku](https://heroku-badge.herokuapp.com/?app=geenth)]
+
 A free music streaming web service
 
 # Screenshot
