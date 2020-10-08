@@ -22,6 +22,9 @@ else
 <head>
 	<title>Welcome to Geenth!</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="icon" 
+      type="image/png" 
+	    href="../assets/images/geenth.png">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>></script>
 	<script src='assets/script/script.js'></script>
 </head>

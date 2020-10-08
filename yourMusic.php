@@ -48,4 +48,50 @@
  	</div>
  	
 
+
+ 
  </div>
+  <div class="playlistContainer">
+
+ 	<div class="gridViewContainer">
+
+ 		<h2>
+ 			Favourites
+
+ 		</h2>
+		<?php
+			$username = $userLoggedIn->getId();
+			$playlistQuery = mysqli_query($conn,"SELECT * FROM favouritesongs where userId='$username' ");
+			if(mysqli_num_rows($playlistQuery)==0)
+			{
+				echo "<span class='noResult'>No FavouritesFound Found</span>";
+			}
+		else{
+			while($row=mysqli_fetch_array($playlistQuery))
+			{
+				
+				$favourite=new Favourite($conn,$row['userId']);
+			}
+
+				echo "<div class='gridViewItem' role='link' tabindex='0' onclick='openPage(\"favourites.php\")'>
+					<div class='playlistImage'>
+					<img src='assets/images/icons/playlist.png'>
+					</div>
+
+
+
+							<div class='gridViewInfo'>
+	 						Favourite Songs
+	 				</div>
+				</div>";
+		}
+	?>
+
+
+
+ 		
+ 	</div>
+ 	
+
+ </div>
+
