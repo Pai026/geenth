@@ -28,19 +28,6 @@ class User
 		return $row['email'];
 
 	}
-	public function getProfilePic()
-	{
-		$query=mysqli_query($this->conn,"SELECT profilePic  FROM users Where username='$this->username'");
-		$row=mysqli_fetch_array($query);
-		return $row['profilePic'];
-
-	}
-	public function getId()
-	{
-		$query=mysqli_query($this->conn,"SELECT id  FROM users Where username='$this->username'");
-		$row=mysqli_fetch_array($query);
-		return $row['id'];
-	}
 
 
 
